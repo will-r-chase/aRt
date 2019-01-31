@@ -6,5 +6,7 @@ This is the repository for my 12 Months of aRt project. Each month of 2019 I tac
 ## January: tessellated menagerie
 
 Tessellated animals
+
 Blog post: <a href="https://www.williamrchase.com/post/tessellated-menagerie-12-months-of-art-january/" target="_blank">https://www.williamrchase.com/post/tessellated-menagerie-12-months-of-art-january/</a>
+
 <img src="static/shattered_menagerie.gif" width=70%>
