@@ -65,22 +65,34 @@ bear$y_new <- bear$y_new + 2.2
 giraffe$y_new <- giraffe$y_new + 3.2
 
 #randomize ids to make animation look better
+#also add dummy polygons to make all equal
+#define x is the largest of your dataframes (most polygons)
+x <- 505
+
 stag_split <- split(stag, stag$id)
+dummy_stag <- sample(stag_split, x-length(stag_split))
+stag_split <- c(stag_split, dummy_stag)
 new_id1 <- sample(1:length(stag_split), length(stag_split))
 y1 <- 1:length(stag_split)
 stag_randomized <- map2_dfr(stag_split, y1, ~mutate(.x, new_id = new_id1[.y]))
 
 dragonfly_split <- split(dragonfly, dragonfly$id)
+dummy_dragonfly <- sample(dragonfly_split, x-length(dragonfly_split))
+dragonfly_split <- c(dragonfly_split, dummy_dragonfly)
 new_id2 <- sample(1:length(dragonfly_split), length(dragonfly_split))
 y2 <- 1:length(dragonfly_split)
 dragonfly_randomized <- map2_dfr(dragonfly_split, y2, ~mutate(.x, new_id = new_id2[.y]))
 
 bear_split <- split(bear, bear$id)
+dummy_bear <- sample(bear_split, x-length(bear_split))
+bear_split <- c(bear_split, dummy_bear)
 new_id3 <- sample(1:length(bear_split), length(bear_split))
 y3 <- 1:length(bear_split)
 bear_randomized <- map2_dfr(bear_split, y3, ~mutate(.x, new_id = new_id3[.y]))
 
 giraffe_split <- split(giraffe, giraffe$id)
+dummy_giraffe <- sample(giraffe_split, x-length(giraffe_split))
+giraffe_split <- c(giraffe_split, dummy_giraffe)
 new_id4 <- sample(1:length(giraffe_split), length(giraffe_split))
 y4 <- 1:length(giraffe_split)
 giraffe_randomized <- map2_dfr(giraffe_split, y4, ~mutate(.x, new_id = new_id4[.y]))
@@ -113,4 +125,4 @@ anim1 <-
 
 #animate and save
 animate(anim1, nframes = 150, fps = 10, detail = 2)
-anim_save("shattered_menagerie.gif", device = "png", type = "cairo")
+anim_save("shattered_menagerie_improved.gif", device = "png", type = "cairo", height = 7, width = 7, units = "in")
