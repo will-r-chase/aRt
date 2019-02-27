@@ -1,0 +1,9 @@
+## How to make these strange attractors 
+
+Each script in this repository is named after the type of attractor it is based on. For example, bedhead.R is based on the "bedhead" attractor. Generally, the script begins with a "typical" attractor of that type, and then I begin tweaking the formula and/or parameters in subsequent code chunks to produce different attractors. Often, by the end of a script I have changed the formula so much that it no longer resembles the original attractor at all, and mathematically would be considered a different attractor. I have left these together however, to show the flow of my work. The examples "chase.R" "chase_ratchet.R" and "ratchet.R" are attractors entirely of my own devising. 
+
+Each script is organized with some setup at the top, then split into code chunks to produce each image in the "outputs" folder. The code chunks each have their own formula (either R or Rcpp), a set of parameters, and a plotting function. If you want to make your own attractors, I recommend you start by tweaking the parameters (ie. a, b, c..). Then if you're feeling adventurous, try tweaking the formula in the createTrajectory function. Tweaking these things might make a plot that converges, so that it will appear as only a single black dot and you might think nothing plotted. If this happens, just try tweaking again in a different way... it will probably work eventually. This is a very random process and encourages experimentation. Nothing bad will happen if your new formula/parameters don't work, so I encourage trying things you might think are crazy. 
+
+Some of the createTrajectory functions are written in Rcpp, some are written in R. They both work well, the Rcpp functions are slightly faster. Plotting the points will take the longest, but generally no more than a few minutes. 
+
+For more explanation and to better understand the process and details, go read the blog post (listed on the readme of the aRt repository). 
