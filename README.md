@@ -10,3 +10,11 @@ Tessellated animals
 Blog post: <a href="https://www.williamrchase.com/post/tessellated-menagerie-12-months-of-art-january/" target="_blank">https://www.williamrchase.com/post/tessellated-menagerie-12-months-of-art-january/</a>
 
 <img src="static/shattered_menagerie.gif" width=70%>
+
+## February: strange attractors
+
+Strange attractors
+
+Blog post: <a href="https://www.williamrchase.com/post/strange-attractors-12-months-of-art-february/" target="_blank">https://www.williamrchase.com/post/strange-attractors-12-months-of-art-february/</a>
+
+<img src="static/attractor_collage.png" width="70%">
