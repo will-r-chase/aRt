@@ -18,3 +18,11 @@ Strange attractors
 Blog post: <a href="https://www.williamrchase.com/post/strange-attractors-12-months-of-art-february/" target="_blank">https://www.williamrchase.com/post/strange-attractors-12-months-of-art-february/</a>
 
 <img src="static/attractor_collage.png" width="70%">
+
+## March: art of pi
+
+Art of pi
+
+Blog post: <a href"https://www.williamrchase.com/post/animating-pi-12-months-of-art-march/" target="_blank">https://www.williamrchase.com/post/animating-pi-12-months-of-art-march/</a>
+
+<img src="static/spiroband.gif" width="70%">
