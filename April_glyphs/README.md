@@ -1,0 +1,5 @@
+# How to make
+
+There are two algorithms described the blog post for this month. "summoning_generate.R" contains the function to make the summoning circle glyphs, while "orbits_generate.R" contains the function to make the orbital glyphs. Both of these files are dead easy to use. Just be sure you have `tidyverse` and the `rap` packages installed (`rap` can be installed using `devtools::install_github("romainfrancois/rap")`). Then use the function in the script and run it with some "seed probabilities" defined. Each script already comes with some seed probabilities, and you can use or tweak those. Each time you run the function it will generate a totally random and unique glyph. 
+
+The script "glyph_generate.R" is basically my development and debugging script where I have all the components to test out. 

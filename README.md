@@ -23,6 +23,14 @@ Blog post: <a href="https://www.williamrchase.com/post/strange-attractors-12-mon
 
 Art of pi
 
-Blog post: <a href"https://www.williamrchase.com/post/animating-pi-12-months-of-art-march/" target="_blank">https://www.williamrchase.com/post/animating-pi-12-months-of-art-march/</a>
+Blog post: <a href="https://www.williamrchase.com/post/animating-pi-12-months-of-art-march/" target="_blank">https://www.williamrchase.com/post/animating-pi-12-months-of-art-march/</a>
 
 <img src="static/spiroband.gif" width="70%">
+
+## April: orbital glyphs, part 1
+
+Orbital glyphs / summoning circles
+
+Blog post: <a href="https://www.williamrchase.com/post/orbital-glyphs-part-1-12-months-of-art-april/" target="_blank">https://www.williamrchase.com/post/orbital-glyphs-part-1-12-months-of-art-april/</a>
+
+<img src="static/summon_1.png" width="90%">
