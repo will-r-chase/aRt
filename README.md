@@ -33,4 +33,18 @@ Orbital glyphs / summoning circles
 
 Blog post: <a href="https://www.williamrchase.com/post/orbital-glyphs-part-1-12-months-of-art-april/" target="_blank">https://www.williamrchase.com/post/orbital-glyphs-part-1-12-months-of-art-april/</a>
 
-<img src="static/summon_1.png" width="90%">
+<img src="static/summon_1.png" width="80%">
+
+## May: orbital glyphs, part 2
+
+This month I made several improvements to my glyph algorithms, and turned the whole thing into a package! You can find the package at <a href="https://github.com/will-r-chase/glyph" target="_blank">https://github.com/will-r-chase/glyph</a>
+
+Blog post: <a href="https://www.williamrchase.com/post/orbital-glyphs-part-2-12-months-of-art-may/" target="_blank">https://www.williamrchase.com/post/orbital-glyphs-part-2-12-months-of-art-may/</a>
+
+<img src="static/glitch.png" width="80%">
+
+## June: artistic coding for the useR
+
+This month I wrote a blog post summarizing what I've learned in the first half of my 12 Months of aRt project. The post includes a list of packages to help make aRt, tutorials and blogs to help you get started with aRt, and a list of people to follow on Twitter for inspiration. 
+
+Blog post: <a href="https://www.williamrchase.com/post/artistic-coding-for-the-user-12-months-of-art-june/" target="_blank">https://www.williamrchase.com/post/artistic-coding-for-the-user-12-months-of-art-june/</a>
