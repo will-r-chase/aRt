@@ -1,7 +1,7 @@
 library(tidyverse)
 library(rap)
 
-summon <- function(seed_probs) {
+summon <- function(seed_probs = c(0.3, 0.5, 0.1, 0.1), inscribed_probs = c(0.2, 0.3, 0.3, 0.2), sec_shape_probs = c(0.4, 0.6), third_shape_probs = c(0.5, 0.5)) {
   makedf_seed <- function(seed_shape, seed_r) {
     switch(seed_shape,
            "none" = {
@@ -167,7 +167,7 @@ summon <- function(seed_probs) {
   orbits <- makedf_orbits(num_orbits, orbit_r, orbit_params$orbit_linetype, orbit_params$orbit_widths)
   
   #choose inscribed shapes
-  num_inscribed <- sample(0:3, 1, prob = c(0.2, 0.3, 0.3, 0.2))
+  num_inscribed <- sample(0:3, 1, prob = inscribed_probs)
   inscribed_opts <- c("circle", "diamond", "square")
   if(num_inscribed > 0) {
     inscribed_shape1 <- sample(c("diamond", "square"), 1)
@@ -191,14 +191,14 @@ summon <- function(seed_probs) {
   }
   if(num_inscribed > 0) {
     if(inscribed_shape1 == "diamond") {
-      sec_shape <- sample(c("square", "none"), 1, prob = c(0.4, 0.6))
+      sec_shape <- sample(c("square", "none"), 1, prob = sec_shape_probs)
       sec_r <- inscribed_r1
       sec_linetype <- sample(c("solid", "dotted"), 1, prob = c(0.2, 0.8))
       sec_width <- 0.15
       sec_df <- makedf_outlines(nlines = 1, r = sec_r, shapes = sec_shape, linetype = sec_linetype, width = sec_width)
     }
     if(inscribed_shape1 == "square") {
-      sec_shape <- sample(c("diamond", "none"), 1, prob = c(0.4, 0.6))
+      sec_shape <- sample(c("diamond", "none"), 1, prob = sec_shape_probs)
       sec_r <- inscribed_r1
       sec_linetype <- sample(c("solid", "dotted"), 1, prob = c(0.2, 0.8))
       sec_width <- 0.15
@@ -209,7 +209,7 @@ summon <- function(seed_probs) {
   }
   if(num_inscribed > 0) {
     if(sec_shape != "none") {
-      third_index <- sample(c(TRUE, FALSE), 1, prob = c(0.5, 0.5))
+      third_index <- sample(c(TRUE, FALSE), 1, prob = third_shape_probs)
       if(third_index) {
         third_shapes <- c("square_left", "square_right")
         third_r <- inscribed_r1
@@ -297,7 +297,6 @@ summon <- function(seed_probs) {
     theme(panel.background = element_rect(fill = "#141414")) 
 }
 
-seed_probs <- c(0.3, 0.5, 0.1, 0.1)
 
 summon(seed_probs)
 

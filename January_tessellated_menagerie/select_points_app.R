@@ -2,7 +2,7 @@
 
 #enter your rds file for ordered points dataframe of your image outline
 #file comes from get_edge_points.R
-giraffe <- readRDS("rds_files/bear.rds")
+giraffe <- readRDS("January_tessellated_menagerie/rds_files/stag.rds")
 
 
 library(ggplot2)

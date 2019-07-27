@@ -3,10 +3,10 @@ library(gganimate)
 library(scales)
 
 #read polygon dataframes
-stag <- readRDS("rds_files/stag_polys.rds")
-dragonfly <- readRDS("rds_files/dragonfly_polys.rds")
-bear <- readRDS("rds_files/bear_polys.rds")
-giraffe <- readRDS("rds_files/giraffe_polys.rds")
+stag <- readRDS("January_tessellated_menagerie/rds_files/stag_polys.rds")
+dragonfly <- readRDS("January_tessellated_menagerie/rds_files/dragonfly_polys.rds")
+bear <- readRDS("January_tessellated_menagerie/rds_files/bear_polys.rds")
+giraffe <- readRDS("January_tessellated_menagerie/rds_files/giraffe_polys.rds")
 
 #colors
 mondrian <- c("#F7F4EF", "#F7F4EF", "#F7F4EF", "#ffc214", "#d0191f", "#3D487E", "#070A03")

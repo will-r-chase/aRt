@@ -1,7 +1,8 @@
 library(tidyverse)
 library(rap)
+library(EnvStats)
 
-generate_orbit <- function(seed_probs) {
+generate_orbit <- function(seed_probs = c(0.3, 0.5, 0.1, 0.1), planet_probs = c(0.4, 0.3, 0.2, 0.2), pareto2_prob = c(0.2, 0.8)) {
   makedf_seed <- function(seed_shape, seed_r) {
     switch(seed_shape,
            "none" = {
@@ -170,7 +171,7 @@ generate_orbit <- function(seed_probs) {
   #choose planets
   planets <- list()
   for(i in 1:num_orbits) {
-    planets[[i]] <- tibble(planet = 0:sample(0:3, 1, prob = c(0.4, 0.3, 0.2, 0.2)), num = i)
+    planets[[i]] <- tibble(planet = 0:sample(0:3, 1, prob = planet_probs), num = i)
   }
   
   planets_join <- 
@@ -209,15 +210,16 @@ generate_orbit <- function(seed_probs) {
         planets_orbits %>%
         rap(points = ~makedf_planets(cen_x = cen_x, cen_y = cen_y, r = r)) %>%
         unnest(.id = "id") %>%
-        select(id, x, y) 
+        select(id, x, y) %>%
+        mutate(id = as.character(id))
     } else {
-      planets_orbits <- data.frame(id = 1, x = 0, y = 0)
+      planets_orbits <- data.frame(id = "1", x = 0, y = 0)
     }
     
     planets_linesize <- 
-      data.frame(id = unique(planets_orbits$id), linewidth = sample(seq(0.1, 0.16, by = 0.01), length(unique(planets_orbits$id)), replace = TRUE)) 
+      data.frame(id = as.character(unique(planets_orbits$id)), linewidth = sample(seq(0.1, 0.16, by = 0.01), length(unique(planets_orbits$id)), replace = TRUE)) 
     
-    planets_orbits <- left_join(planets_orbits, planets_linesize, by = "id")
+    suppressWarnings(planets_orbits <- left_join(planets_orbits, planets_linesize, by = "id"))
   } else {
     planets_pos <- data.frame(id = 1, x = 0, y = 0)
     planets_orbits <- data.frame(id = 1, x = 0, y = 0)
@@ -227,31 +229,58 @@ generate_orbit <- function(seed_probs) {
     planets_orbits <- data.frame(x = 0, y = 0, id = 1, linesize = 0)
   }
   
+  pareto_start <- sample(0.35:0.6, 1)
+  num_paretos <- sample(3:50, 1)
+  pareto_r <- rpareto(num_paretos, pareto_start, shape = sample(3:4, 1))
+  pareto_linetype <- sample(c("solid", "dotted"), num_paretos, replace = TRUE, prob = c(0.9, 0.1))
+  pareto_width <- sample(seq(0.1, 0.25, by = 0.01), num_paretos, replace = TRUE)
+  
+  pareto_orbits <- makedf_orbits(num_paretos, r = pareto_r, linetype = pareto_linetype, linewidth = pareto_width)
+  
+  pareto_2 <- sample(c(TRUE, FALSE), 1, prob = pareto2_prob)
+  if(pareto_2) {
+    pareto_start2 <- sample(1:1.5, 1)
+    num_paretos2 <- sample(1:20, 1)
+    pareto_r2 <- rpareto(num_paretos, pareto_start, shape = sample(3:4, 1))
+    pareto_linetype2 <- sample(c("solid", "dotted"), num_paretos, replace = TRUE, prob = c(0.9, 0.1))
+    pareto_width2 <- sample(seq(0.1, 0.4, by = 0.01), num_paretos, replace = TRUE)
+    
+    pareto_orbits2 <- makedf_orbits(num_paretos, r = pareto_r, linetype = pareto_linetype, linewidth = pareto_width)
+  } else {
+    pareto_orbits2 <- data.frame(x = 0, y = 0, parent = 1, linewidth = 0, linetype = "solid")
+  }
+  
   #put it all in a list and plot
   final_dat <- 
     list(seed = seed, 
        seed_outlines = seed_outlines, 
        orbits = orbits, 
        planets = planets_pos,
-       planet_orbits = planets_orbits
+       planet_orbits = planets_orbits, 
+       pareto1 = pareto_orbits, 
+       pareto2 = pareto_orbits2
   )
   
-  ggplot() +
-    geom_polygon(data = final_dat[["seed"]], aes(x = x, y = y, group = id), fill = "white") +
-    geom_path(data = final_dat[["seed_outlines"]], aes(x = x, y = y, group = parent, size = linewidth), linetype = final_dat[["seed_outlines"]]$linetype, color = "white") +
-    geom_path(data = final_dat[["orbits"]], aes(x = x, y = y, group = parent, size = linewidth), linetype = final_dat[["orbits"]]$linetype, color = "white") +
-    geom_polygon(data = final_dat[["planets"]], aes(x = x, y = y, group = id), fill = "white") +
-    geom_path(data = final_dat[["planet_orbits"]], aes (x = x, y = y, group = id, size = linesize), color = "white", size = 0.13) +
-    scale_size_identity() +
-    scale_color_identity() +
-    theme_void() +
-    coord_equal() +
-    theme(panel.background = element_rect(fill = "#141414"))
+  plot <- 
+    ggplot() +
+      geom_polygon(data = final_dat[["seed"]], aes(x = x, y = y, group = id), fill = "white") +
+      geom_path(data = final_dat[["seed_outlines"]], aes(x = x, y = y, group = parent, size = linewidth), linetype = final_dat[["seed_outlines"]]$linetype, color = "white") +
+      geom_path(data = final_dat[["pareto1"]], aes(x = x, y = y, group = parent, size = linewidth), linetype = final_dat[["pareto1"]]$linetype, color = "white") +
+      geom_path(data = final_dat[["pareto2"]], aes(x = x, y = y, group = parent, size = linewidth), linetype = final_dat[["pareto2"]]$linetype, color = "white") +
+      geom_path(data = final_dat[["orbits"]], aes(x = x, y = y, group = parent, size = linewidth), linetype = final_dat[["orbits"]]$linetype, color = "white") +
+      geom_polygon(data = final_dat[["planets"]], aes(x = x, y = y, group = id), fill = "white") +
+      geom_path(data = final_dat[["planet_orbits"]], aes (x = x, y = y, group = id, size = linesize), color = "white", size = 0.13) +
+      scale_size_identity() +
+      scale_color_identity() +
+      theme_void() +
+      coord_equal() +
+      theme(panel.background = element_rect(fill = "#141414"))
+  
+  suppressWarnings(print(plot))
   
 }
 
-seed_probs <- c(0.3, 0.5, 0.1, 0.1)
 
 generate_orbit(seed_probs)
 
-ggsave("orbit_4.png", device = "png", type = "cairo")
+#ggsave("orbit_pareto_4.png", device = "png")
