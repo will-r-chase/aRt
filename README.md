@@ -51,7 +51,7 @@ Blog post: <a href="https://www.williamrchase.com/post/artistic-coding-for-the-u
 
 ## July: textures and geometric objects
 
-Aabstract sketches made up of geometric patterns with some textures applied. 
+Abstract sketches made up of geometric patterns and textures.
 
 Blog post: <a href="https://www.williamrchase.com/post/textures-and-geometric-shapes-12-months-of-art-july/" target="_blank">https://www.williamrchase.com/post/textures-and-geometric-shapes-12-months-of-art-july/</a>
 
