@@ -48,3 +48,11 @@ Blog post: <a href="https://www.williamrchase.com/post/orbital-glyphs-part-2-12-
 This month I wrote a blog post summarizing what I've learned in the first half of my 12 Months of aRt project. The post includes a list of packages to help make aRt, tutorials and blogs to help you get started with aRt, and a list of people to follow on Twitter for inspiration. 
 
 Blog post: <a href="https://www.williamrchase.com/post/artistic-coding-for-the-user-12-months-of-art-june/" target="_blank">https://www.williamrchase.com/post/artistic-coding-for-the-user-12-months-of-art-june/</a>
+
+## July: textures and geometric objects
+
+Aabstract sketches made up of geometric patterns with some textures applied. 
+
+Blog post: <a href="https://www.williamrchase.com/post/textures-and-geometric-shapes-12-months-of-art-july/" target="_blank">https://www.williamrchase.com/post/textures-and-geometric-shapes-12-months-of-art-july/</a>
+
+<img src="static/pebbles.png" width="80%">
