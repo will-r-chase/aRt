@@ -56,3 +56,11 @@ Abstract sketches made up of geometric patterns and textures.
 Blog post: <a href="https://www.williamrchase.com/post/textures-and-geometric-shapes-12-months-of-art-july/" target="_blank">https://www.williamrchase.com/post/textures-and-geometric-shapes-12-months-of-art-july/</a>
 
 <img src="static/pebbles.png" width="80%">
+
+## August: noise algorithms
+
+An exploration of the Ambient package for generating procedural noise.
+
+Blog post: <a href="https://www.williamrchase.com/post/noise-12-months-of-art-august/" target="_blank">https://www.williamrchase.com/post/noise-12-months-of-art-august/</a>
+
+<img src="static/melted_gold.png" width="80%">
