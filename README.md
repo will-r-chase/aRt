@@ -64,3 +64,11 @@ An exploration of the Ambient package for generating procedural noise.
 Blog post: <a href="https://www.williamrchase.com/post/noise-12-months-of-art-august/" target="_blank">https://www.williamrchase.com/post/noise-12-months-of-art-august/</a>
 
 <img src="static/melted_gold.png" width="80%">
+
+## September: flow fields
+
+Exploring flow fields with curl noise, particles, and polygons.
+
+Blog post: <a href="https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/" target="_blank">https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/</a>
+
+<img src="static/curl8_seed230.png" width="90%">
