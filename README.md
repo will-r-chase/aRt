@@ -72,3 +72,11 @@ Exploring flow fields with curl noise, particles, and polygons.
 Blog post: <a href="https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/" target="_blank">https://www.williamrchase.com/post/flow-fields-12-months-of-art-september/</a>
 
 <img src="static/curl8_seed230.png" width="90%">
+
+## October: disintegration
+
+Rigid shapes disintegrating in the wind. 
+
+Blog post: <a href="https://www.williamrchase.com/post/disintegration-12-months-of-art-october/" target="_blank">https://www.williamrchase.com/post/disintegration-12-months-of-art-october/</a>
+
+<img src="static/regons_3.png">
