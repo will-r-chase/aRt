@@ -80,3 +80,11 @@ Rigid shapes disintegrating in the wind.
 Blog post: <a href="https://www.williamrchase.com/post/disintegration-12-months-of-art-october/" target="_blank">https://www.williamrchase.com/post/disintegration-12-months-of-art-october/</a>
 
 <img src="static/regons_3.png">
+
+## November: disintegration, part 2
+
+Rigid shapes disintegrating, now with polygons, noise, and colors!
+
+Blog post: <a href="https://www.williamrchase.com/post/disintegration-part-2-12-months-of-art-november/" target="_blank">https://www.williamrchase.com/post/disintegration-part-2-12-months-of-art-november/</a>
+
+<img src="static/three_tris.png">
