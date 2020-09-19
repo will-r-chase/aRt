@@ -93,6 +93,6 @@ Blog post: <a href="https://www.williamrchase.com/post/disintegration-part-2-12-
 
 Grids that distort when they pass through polygons
 
-Blog post: <a href="" target="_blank"></a>
+Blog post: <a href="https://www.williamrchase.com/post/grid-12-months-of-art-december/" target="_blank">https://www.williamrchase.com/post/grid-12-months-of-art-december/</a>
 
 <img src="static/rects_flow_1.png">
