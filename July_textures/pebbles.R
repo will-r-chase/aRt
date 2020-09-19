@@ -234,14 +234,14 @@ pts$y <- pts$y - 1000
 circ_layer6 <- circle_pebbles(probs = probs2, num_keepers = 20)[["pebbles"]] %>%
   group_by(id) %>%
   group_map( ~mutate(.x, color = sample(pebble_colors, 1))) %>%
-  ungroup()
+  bind_rows(.id = "id")
 
 tex_colored <- 
   texturize(circ_layer6, pts)  %>%
   mutate(size = sample(seq(0.03, 0.6, length.out = 100), size = nrow(.), replace = TRUE)) %>%
   group_by(id) %>%
   group_map( ~mutate(.x, color = sample(tex_colors, 1))) %>%
-  ungroup()
+  bind_rows(.id = "id")
 
 tex_random <- 
   tex_colored %>%

@@ -79,8 +79,8 @@ custom_pal <- c("#686D2C", "#F4CB4C", "#99673A")
 bl_yl <- c('#4CA66B', '#00b2dd')
 bl_yl_bg <- '#EEEEEE'
 
-rohlfs_1R <- c('#004996', '#567bae', '#ff4c48', '#ffbcb3')
-rohlfs_1R_bg <- "#fff8e7"
+rolfs_1r <- c('#004996', '#567bae', '#ff4c48', '#ffbcb3')
+rolfs_1r_bg <- "#fff8e7"
 
 dt01 <- c('#172a89', '#f7f7f3')
 dt01_bg <- '#f3abb0'
@@ -109,7 +109,7 @@ field <- as.matrix(grid, x, value = angle)
 sim <- create_ring(10000) %>% 
   simulate(alpha_decay = 0, setup = petridish_genesis(vel_max = 0, max_radius = 1)) %>% 
   wield(reset_force, xvel = 0, yvel = 0) %>% 
-  wield(field_force, angle = field, vel = 0.15, xlim = c(-10, 10), ylim = c(-10, 10)) %>% 
+  wield(field_force, angle = field, vel = 0.15, xlim = c(-20, 25), ylim = c(-20, 25)) %>% 
   evolve(100, record)
 
 traces <- data.frame(do.call(rbind, lapply(sim$history, position)))
@@ -119,15 +119,16 @@ traces$particle <- rep(1:10000, 100)
 traces2 <- 
   traces %>%
   group_by(particle) %>%
-  mutate(color = sample(custom_pal, 1, replace = TRUE))
+  mutate(color = sample(rolfs_1r, 1, replace = TRUE))
 
 ggplot(traces2) +
   geom_path(aes(x, y, group = particle, color = color), size = 0.03, alpha = 0.5) + 
   scale_color_identity(guide = "none") +
   theme_void() + 
-  theme(legend.position = 'none', panel.background = element_rect(fill = knotberry1_bg))
+  theme(legend.position = 'none', panel.background = element_rect(fill = rolfs_1r_bg, color = "NA"),
+        panel.border = element_blank())
 
-ggsave("curl5.png", width = 15, height = 15)
+ggsave("curl1_seed345_purple.png", width = 4.1, height = 5.8, dpi = 300)
 
 #something new
 seed <- sample(1:2000, 1)
@@ -167,7 +168,7 @@ ggplot(traces2) +
   theme_void() + 
   theme(legend.position = 'none', panel.background = element_rect(fill = rolfs_1r_bg))
 
-ggsave("curl6_seed1241.png", width = 15, height = 15)
+ggsave("curl2_seed1440_purple_4x6.png", width = 4, height = 6)
 
 
 #another one

@@ -88,3 +88,11 @@ Rigid shapes disintegrating, now with polygons, noise, and colors!
 Blog post: <a href="https://www.williamrchase.com/post/disintegration-part-2-12-months-of-art-november/" target="_blank">https://www.williamrchase.com/post/disintegration-part-2-12-months-of-art-november/</a>
 
 <img src="static/three_tris.png">
+
+## December: grid
+
+Grids that distort when they pass through polygons
+
+Blog post: <a href="" target="_blank"></a>
+
+<img src="static/rects_flow_1.png">
